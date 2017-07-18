@@ -15,13 +15,13 @@ var Videos = Backbone.Collection.extend({
   search: function(query) {
     // var query = $('.form-control').val();
     Backbone.ajax({
+      url:  'https://www.googleapis.com/auth/youtube',
+      type: 'GET',
+      dataType: 'json',
       data: {q: query},
-      // url: "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=twitterapi&count=25",
-      // data: "",
-      // dataType: "json",
-      // contentType: JSON.stringify(data)
-      success: function success() { console.log('success') },
-      error: function (error) { console.log('failed') }
+      contentType: 'application/json',
+      success: function (data) { console.log('success'); },
+      error: function (error) { console.log('failed'); }
     });
   },
 
