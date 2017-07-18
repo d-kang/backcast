@@ -3,9 +3,8 @@ var Videos = Backbone.Collection.extend({
   model: Video,
 
   trigger: function() {
+    var collection = new Videos();
     var vlView = new VideoListView({ collection });
-  console.log({collection})
-  console.log('collection', JSON.stringify(collection, null, 2));
     vlView.render();
   }
 
