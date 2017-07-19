@@ -6,7 +6,7 @@ var AppView = Backbone.View.extend({
     this.videos = new Videos(window.exampleVideoData);
 
     this.listenTo(this.videos, 'sync', this.selectFirst);
-    this.videos.search();
+    this.videos.search('rick astley');
     this.render();
 
   },
